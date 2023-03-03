@@ -31,7 +31,12 @@ namespace COMP003A.Assignment7
             Console.WriteLine($"\t{sectionName} Section");
             Console.WriteLine("".PadRight(50, '*'));
         }
-
+        /// <summary>
+        /// CharacterCounter method counts how many times a specified letter 
+        /// appears in the specified word and outputs the number.
+        /// </summary>
+        /// <param name="characterInput">User provided letter</param>
+        /// <param name="word">User provided word</param>
         static void CharacterCounter(char characterInput, string word)
         {
             int counter = 0;
@@ -50,8 +55,7 @@ namespace COMP003A.Assignment7
                 }
                  
             }
-
-            Console.WriteLine($"The letter \'{characterInput}\' appears {letterCount} times in the word {word}");
+            Console.WriteLine($"The letter \'{characterInput}\' appears {letterCount} times in the word {word}.");
         }
     }
 }
