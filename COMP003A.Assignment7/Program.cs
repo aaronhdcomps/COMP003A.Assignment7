@@ -14,9 +14,9 @@ namespace COMP003A.Assignment7
         static void Main(string[] args)
         {
             SectionSeparator("Array - CharacterCounter");
-            Console.Write("Please enter a letter: ");
+            Console.WriteLine("Please enter a letter: ");
             char characterInput = Convert.ToChar(Console.ReadLine());
-            Console.Write("Please enter a word: ");
+            Console.WriteLine("Please enter a word: ");
             string word = Console.ReadLine();
             CharacterCounter(characterInput, word);
         }
@@ -44,17 +44,21 @@ namespace COMP003A.Assignment7
             foreach(char c in word)
             {
                 char compare = word[counter];
-                if(compare == characterInput)
+                char caseCompareUp = Char.ToUpper(compare);
+                char caseCompareLow = Char.ToLower(compare);
+                if (caseCompareLow == characterInput) 
                 {
                     letterCount++;
                     counter++;
                 }
-                else
+                else if (Char.ToUpper(caseCompareUp) == compare)
                 {
+                    letterCount++;
                     counter++;
                 }
-                 
+                else counter++;                                
             }
+
             Console.WriteLine($"The letter \'{characterInput}\' appears {letterCount} times in the word {word}.");
         }
     }
