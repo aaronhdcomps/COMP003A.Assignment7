@@ -19,6 +19,7 @@ namespace COMP003A.Assignment7
             Console.WriteLine("Please enter a word: ");
             string word = Console.ReadLine();
             CharacterCounter(characterInput, word);
+            Console.WriteLine($"The letter \'{characterInput}\' appears {LetterCount} times in the word {word}.");
         }
                 
         /// <summary>
@@ -37,21 +38,15 @@ namespace COMP003A.Assignment7
         /// </summary>
         /// <param name="characterInput">User provided letter</param>
         /// <param name="word">User provided word</param>
-        static void CharacterCounter(char characterInput, string word)
+        static int CharacterCounter(char characterInput, string word)
         {
             int counter = 0;
             int letterCount = 0;
             foreach(char c in word)
             {
-                char compare = word[counter];
-                char caseCompareUp = Char.ToUpper(compare);
-                char caseCompareLow = Char.ToLower(compare);
-                if (caseCompareLow == characterInput) 
-                {
-                    letterCount++;
-                    counter++;
-                }
-                else if (Char.ToUpper(caseCompareUp) == compare)
+                char charInWord = Char.ToLower(word[counter]);
+                char characterInput = Char.ToLower(characterInput);
+                if (charInWord == characterInput) 
                 {
                     letterCount++;
                     counter++;
@@ -59,7 +54,8 @@ namespace COMP003A.Assignment7
                 else counter++;                                
             }
 
-            Console.WriteLine($"The letter \'{characterInput}\' appears {letterCount} times in the word {word}.");
+            return letterCount;
+
         }
     }
 }
