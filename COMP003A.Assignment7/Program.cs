@@ -34,13 +34,24 @@ namespace COMP003A.Assignment7
 
         static void CharacterCounter(char characterInput, string word)
         {
-            
-            for (int counter = 0; counter < word.Length; counter++)
+            int counter = 0;
+            int letterCount = 0;
+            foreach(char c in word)
             {
-                Console.Write(word[counter].ToString());
-                
+                char compare = word[counter];
+                if(compare == characterInput)
+                {
+                    letterCount++;
+                    counter++;
+                }
+                else
+                {
+                    counter++;
+                }
+                 
             }
 
+            Console.WriteLine($"The letter \'{characterInput}\' appears {letterCount} times in the word {word}");
         }
     }
 }
