@@ -6,12 +6,14 @@
  */
 
 
+using System.Collections.Generic;
+
 namespace COMP003A.Assignment7
 {
     internal class Program
     {
         static void Main(string[] args)
-        {
+        {   /*
             SectionSeparator("Array - CharacterCounter");
 
             Console.WriteLine("Please enter a letter: ");//Prompt to user for letter.
@@ -25,7 +27,7 @@ namespace COMP003A.Assignment7
             //vvvvvvvv
             Console.WriteLine($"The letter \'{characterInput}\' appears {letterCount} times in the word \"{word}\".");
             
-            SectionSeparator("Array - IsPalindrome Section");
+            SectionSeparator("Array - IsPalindrome");
 
             Console.WriteLine("Please enter a word: ");//Prompt to user for word.
             word = Convert.ToString(Console.ReadLine());//User response stored in string 'word'
@@ -41,6 +43,8 @@ namespace COMP003A.Assignment7
             {
                 Console.WriteLine($"The word \"{word}\" IS NOT a Palindrome.");//Answer if false.
             }
+            */
+            SectionSeparator("List - Add");
         }
                 
         /// <summary>
@@ -60,8 +64,7 @@ namespace COMP003A.Assignment7
         /// </summary>
         /// <param name="characterInput">User provided letter</param>
         /// <param name="word">User provided word</param>
-        /// <returns>Integer number of how many times provided letter appears in specified word</returns>
-         
+        /// <returns>Integer number of how many times provided letter appears in specified word</returns> 
         static int CharacterCounter(char characterInput, string word)
         {
             int counter = 0;
@@ -105,6 +108,11 @@ namespace COMP003A.Assignment7
             }
             else return false;
             
+        }
+
+        static void TraverseList(List<string> list)
+        { 
+        
         }
 
 
