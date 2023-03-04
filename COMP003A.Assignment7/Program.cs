@@ -5,7 +5,6 @@
  * 
  */
 
-using System.Diagnostics.Metrics;
 
 namespace COMP003A.Assignment7
 {
@@ -31,15 +30,16 @@ namespace COMP003A.Assignment7
             Console.WriteLine("Please enter a word: ");//Prompt to user for word.
             word = Convert.ToString(Console.ReadLine());//User response stored in string 'word'
             
-            bool answer = IsPalindrome(word);
+            bool answer = IsPalindrome(word);//Calling Method and passing word down.
+            //assigns return value to answer
 
-            if (answer == true) 
+            if (answer == true) //Simple if else statement if answer is true or false.
             {
-                Console.WriteLine($"The word \"{word}\" IS a Palindrome.");
+                Console.WriteLine($"The word \"{word}\" IS a Palindrome.");//Answer if true.
             }
             else 
             {
-                Console.WriteLine($"The word \"{word}\" IS NOT a Palindrome.");
+                Console.WriteLine($"The word \"{word}\" IS NOT a Palindrome.");//Answer if false.
             }
         }
                 
@@ -83,7 +83,8 @@ namespace COMP003A.Assignment7
         /// <summary>
         /// User provides word to check is a palindrome. Method takes word and converts it to lowercase. 
         /// After word is in lowercase, foreach loop itterates over the string with the reverseCounter to
-        /// start from the last index in array and concantinate each char in inputWord to reverseWord.
+        /// start from the last index in array and concantinate each char from inputWord to reverseWord.
+        /// Then if statement will check if reverseWord and inputWord match and returns true or false.
         /// </summary>
         /// <param name="word">User provided word to check as a palindrome</param>
         /// <returns>True or False</returns>
@@ -97,14 +98,12 @@ namespace COMP003A.Assignment7
                 reverseWord += Convert.ToString(inputWord[reverseCounter]); 
                 reverseCounter--;
             }
+
             if (reverseWord == inputWord)
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+            else return false;
             
         }
 
